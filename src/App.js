@@ -1,25 +1,105 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header/Header";
+import Welcome from "./components/Welcome/Welcome";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div>
+			<Header />
+			<Welcome />
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nemo omnis a
+				quidem iusto soluta at provident magnam, quia facilis nihil quod dicta nisi
+				voluptatibus explicabo amet eos laudantium quaerat sequi corrupti nobis inventore.
+				Ut aliquam provident ea dignissimos, veritatis animi consequatur velit facere rerum
+				enim quod! Expedita, architecto officia!
+			</p>
+		</div>
+	);
+};
 
 export default App;

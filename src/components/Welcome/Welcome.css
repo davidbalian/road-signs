@@ -1,0 +1,17 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.welcome {
+	height: 100vh;
+	width: 100vw;
+}
+
+.bg-img {
+	width: 100%;
+	height: 100%;
+	z-index: -999;
+	filter: brightness(90%);
+}
