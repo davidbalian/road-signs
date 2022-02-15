@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import source from "./fav.png";
 import "./Header.css";
 
@@ -32,17 +33,25 @@ const Header = () => {
 		<header className='header' style={styles}>
 			<div className='logo-and-title'>
 				<img src={source} alt='roundabout sign' className='logo-img' />
-				<h1 style={color}>Cyprus Road Signs Test</h1>
+				<Link to='/' style={{ textDecoration: "none" }}>
+					<h1 style={color}>Cyprus Road Signs Test</h1>
+				</Link>
 			</div>
 			<span className='dummy'></span>
 			<nav className='nav'>
-				<a href='#' style={color}>
-					Home
-				</a>
-				<a href='#' style={color}>
+				<Link to='/'>
+					<a href='#' style={color}>
+						Home
+					</a>
+				</Link>
+
+				<a href='#about' style={color}>
 					About
 				</a>
-				<button className='test-btn-hdr'>START TEST</button>
+
+				<Link to='/test'>
+					<button className='test-btn-hdr'>START TEST</button>
+				</Link>
 			</nav>
 		</header>
 	);

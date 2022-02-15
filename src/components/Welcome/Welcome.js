@@ -4,7 +4,7 @@ import source from "./hero-bg.jpg";
 
 const Welcome = () => {
 	return (
-		<div className='welcome'>
+		<div className='welcome' id='home'>
 			<h1 className='hero-text'>
 				Learn Road Signs, Become a <span className='highlight'>Safer</span> Driver
 			</h1>

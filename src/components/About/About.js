@@ -1,9 +1,10 @@
 import React from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
 	return (
-		<div className='about'>
+		<div className='about' id='about'>
 			<h2>What is this website?</h2>
 			<p>
 				This website is simply a way for people who plan on taking the Cypriot Driving Test
@@ -20,7 +21,9 @@ const About = () => {
 				be displayed at the end of the test.
 			</p>
 			<h2>Good Luck!</h2>
-			<button className='test-btn'>START TEST</button>
+			<Link to='/test'>
+				<button className='test-btn'>START TEST</button>
+			</Link>
 		</div>
 	);
 };
