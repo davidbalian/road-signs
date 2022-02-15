@@ -3,7 +3,11 @@ import source from "./fav.png";
 import "./Header.css";
 
 const Header = () => {
-	const [styles, setStyles] = useState({ backgroundColor: "transparent" });
+	const [styles, setStyles] = useState({
+		backgroundColor: "transparent",
+		height: "6rem",
+		boxShadow: "none"
+	});
 	const [color, setColor] = useState({ color: "white" });
 
 	window.onscroll = () => {
@@ -12,10 +16,14 @@ const Header = () => {
 
 	function scrollFunction() {
 		if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-			setStyles({ backgroundColor: "white" });
+			setStyles({
+				backgroundColor: "white",
+				height: "4rem",
+				boxShadow: "0 1px 2px 1px rgba(24, 24, 24, 0.308)"
+			});
 			setColor({ color: "black" });
 		} else {
-			setStyles({ backgroundColor: "transparent" });
+			setStyles({ backgroundColor: "transparent", height: "6rem", boxShadow: "none" });
 			setColor({ color: "white" });
 		}
 	}
@@ -34,9 +42,7 @@ const Header = () => {
 				<a href='#' style={color}>
 					About
 				</a>
-				<a href='#' style={color}>
-					Test
-				</a>
+				<button className='test-btn-hdr'>START TEST</button>
 			</nav>
 		</header>
 	);
