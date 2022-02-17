@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import Header from "./components/Header/Header";
 import Welcome from "./components/Welcome/Welcome";
 import "./App.css";
+import Test from "./components/Test/Test";
 
 const App = () => {
 	return (
@@ -20,7 +21,7 @@ const App = () => {
 						</>
 					}
 				/>
-				<Route path='/test' element={<h1>Welcome to the test ya bastard</h1>} />
+				<Route path='/test' element={<Test />} />
 			</Routes>
 		</Router>
 	);

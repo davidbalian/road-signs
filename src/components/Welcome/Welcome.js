@@ -8,7 +8,7 @@ const Welcome = () => {
 			<h1 className='hero-text'>
 				Learn Road Signs, Become a <span className='highlight'>Safer</span> Driver
 			</h1>
-			<img src={source} alt='stop sign' className='bg-img' />
+			{/* <img src={source} alt='stop sign' className='bg-img' /> */}
 		</div>
 	);
 };
