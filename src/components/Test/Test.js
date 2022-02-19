@@ -25,7 +25,12 @@ const Test = () => {
 	};
 
 	return (
-		<div className='test-div'>
+		<form
+			className='test-div'
+			onSubmit={(e) => {
+				e.preventDefault();
+			}}
+		>
 			<Sign
 				name={name}
 				src={source}
@@ -34,6 +39,7 @@ const Test = () => {
 				r3={generateCaption()}
 			/>
 			<button
+				type='submit'
 				onClick={() => {
 					setI((i) => i + 1);
 
@@ -41,9 +47,9 @@ const Test = () => {
 					setSource(signs[i + 1].JPG);
 				}}
 			>
-				next
+				submit
 			</button>
-		</div>
+		</form>
 	);
 };
 
