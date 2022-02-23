@@ -57,15 +57,18 @@ const Test = () => {
 				r3={generateCaption()}
 			/>
 			<button
+				className='next-button'
 				type='submit'
 				onClick={() => {
 					setI((i) => i + 1);
 
 					setName(signs[i + 1].Caption);
 					setSource(signs[i + 1].JPG);
+
+					console.log(source);
 				}}
 			>
-				submit
+				Next
 			</button>
 		</form>
 	);

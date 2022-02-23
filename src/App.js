@@ -5,23 +5,32 @@ import Header from "./components/Header/Header";
 import Welcome from "./components/Welcome/Welcome";
 import "./App.css";
 import Test from "./components/Test/Test";
+import HeaderDark from "./components/HeaderDark/HeaderDark";
 
 const App = () => {
 	return (
 		<Router>
-			<Header />
 			<Routes>
 				<Route
 					exact
 					path='/'
 					element={
 						<>
+							<Header />
 							<Welcome />
 							<About />
 						</>
 					}
 				/>
-				<Route path='/test' element={<Test />} />
+				<Route
+					path='/test'
+					element={
+						<>
+							<HeaderDark />
+							<Test />
+						</>
+					}
+				/>
 			</Routes>
 		</Router>
 	);
