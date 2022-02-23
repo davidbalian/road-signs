@@ -3,8 +3,23 @@ import React, { useState } from "react";
 const Sign = ({ name, src, r1, r2, r3 }) => {
 	const [choice, setChoice] = useState(null);
 
+	const shuffle = (array) => {
+		let currentIndex = array.length,
+			randomIndex;
+
+		while (currentIndex !== 0) {
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+
+			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+		}
+
+		return array;
+	};
+
 	let arrayOfNames = [name, r1, r2, r3];
-	arrayOfNames.sort((a, b) => b.length - a.length);
+	// arrayOfNames.sort((a, b) => b.length - a.length);
+	shuffle(arrayOfNames);
 
 	const handleInputChange = (e) => {
 		setChoice(e.target.value);
