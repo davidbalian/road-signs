@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Sign = ({ name, src, r1, r2, r3 }) => {
 	const [choice, setChoice] = useState(null);
@@ -19,7 +19,9 @@ const Sign = ({ name, src, r1, r2, r3 }) => {
 
 	let arrayOfNames = [name, r1, r2, r3];
 	// arrayOfNames.sort((a, b) => b.length - a.length);
-	shuffle(arrayOfNames);
+	useEffect(() => {
+		shuffle(arrayOfNames);
+	}, []);
 
 	const handleInputChange = (e) => {
 		setChoice(e.target.value);

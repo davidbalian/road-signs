@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import signs from "../../signs";
 import Sign from "../Sign/Sign";
 import "./Test.css";
@@ -23,7 +23,9 @@ const Test = () => {
 		return array;
 	};
 
-	shuffle(signs);
+	useEffect(() => {
+		shuffle(signs);
+	}, []);
 
 	const generateCaption = () => {
 		let isDifferent = false;
