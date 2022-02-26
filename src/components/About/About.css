@@ -38,3 +38,15 @@
 	cursor: pointer;
 	background-color: hsl(222, 56%, 35%);
 }
+
+@media screen and (max-width: 1200px) {
+	.about {
+		padding: 2rem 12rem;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.about {
+		padding: 2rem 6rem;
+	}
+}

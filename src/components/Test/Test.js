@@ -3,19 +3,20 @@ import signs from "../../signs";
 import "./Test.css";
 
 const Test = () => {
-	const [i, setI] = useState(0);
+	const [i, setI] = useState(659);
 
-	const [answer, setAnswer] = useState({ caption: signs[i].Caption, source: signs[i].JPG });
+	const [answer, setAnswer] = useState({ caption: signs[660].Caption, source: signs[660].JPG });
 
 	const [randomChoices, setRandomChoices] = useState([]);
 
 	const [choice, setChoice] = useState();
 
-	// const shuffle = (arr) => {
-	// 	arr.sort(() => Math.random() - 0.5);
-	// };
+	const [bg, setBg] = useState({ backgroundColor: "rgb(45, 79, 158)" });
+	const [buttons, setButtons] = useState(1);
 
-	// shuffle(signs);
+	const shuffle = (arr) => {
+		arr.sort(() => Math.random() - 0.5);
+	};
 
 	// state to check if test has begun or not
 	const [start, setStart] = useState(0);
@@ -25,7 +26,7 @@ const Test = () => {
 		let random;
 
 		while (!isDiff) {
-			random = signs[Math.floor(Math.random() * 658)].Caption;
+			random = signs[Math.floor(Math.random() * 661)].Caption;
 
 			if (answer !== random) {
 				isDiff = 1;
@@ -36,18 +37,24 @@ const Test = () => {
 	};
 
 	useEffect(() => {
+		shuffle(signs);
+	}, []);
+
+	useEffect(() => {
 		setAnswer({ caption: signs[i].Caption, source: signs[i].JPG });
 	}, [i]);
 
 	useEffect(() => {
-		setRandomChoices(
-			[genRandom(), genRandom(), genRandom(), answer.caption].sort(
-				(a, b) => Math.random() - 0.5
-			)
-		);
+		if (i <= signs.length) {
+			setRandomChoices(
+				[genRandom(), genRandom(), genRandom(), answer.caption].sort(
+					(a, b) => Math.random() - 0.5
+				)
+			);
+		}
 	}, [answer]);
 
-	return (
+	return i <= signs.length - 2 ? (
 		<div className='test-div'>
 			{start ? (
 				<div className='img-choices'>
@@ -57,22 +64,21 @@ const Test = () => {
 					/>
 
 					<div className='choices'>
-						<label htmlFor='answer'>
-							{randomChoices[3]}
+						<label htmlFor='r4'>
 							<input
 								type='radio'
 								name='sign-option'
-								id='answer'
+								id='r4'
 								value={randomChoices[3]}
 								onChange={() => {
 									setChoice(randomChoices[3]);
 								}}
 								checked={choice === randomChoices[3]}
 							/>
+							{randomChoices[3]}
 						</label>
 
 						<label htmlFor='r1'>
-							{randomChoices[0]}
 							<input
 								type='radio'
 								name='sign-option'
@@ -83,10 +89,10 @@ const Test = () => {
 								}}
 								checked={choice === randomChoices[0]}
 							/>
+							{randomChoices[0]}
 						</label>
 
 						<label htmlFor='r2'>
-							{randomChoices[1]}
 							<input
 								type='radio'
 								name='sign-option'
@@ -97,10 +103,10 @@ const Test = () => {
 								}}
 								checked={choice === randomChoices[1]}
 							/>
+							{randomChoices[1]}
 						</label>
 
 						<label htmlFor='r3'>
-							{randomChoices[2]}
 							<input
 								type='radio'
 								name='sign-option'
@@ -111,12 +117,13 @@ const Test = () => {
 								}}
 								checked={choice === randomChoices[2]}
 							/>
+							{randomChoices[2]}
 						</label>
 					</div>
 				</div>
 			) : null}
 
-			<div className='buttons'>
+			<div className='buttons' style={{ display: buttons ? "block" : "none" }}>
 				{/* button starts test */}
 				{start ? null : (
 					<button
@@ -131,11 +138,14 @@ const Test = () => {
 				{/* checks answer */}
 				{start ? (
 					<button
+						style={bg}
 						onClick={() => {
 							if (choice === answer.caption) {
-								alert("correect!!!!!");
+								setBg({
+									backgroundColor: "green"
+								});
 							} else {
-								alert("you're actually so clapped fam lmao");
+								setBg({ backgroundColor: "red" });
 							}
 						}}
 					>
@@ -147,7 +157,10 @@ const Test = () => {
 				{start ? (
 					<button
 						onClick={() => {
-							setI(i + 1);
+							if (i <= 659) {
+								setI(i + 1);
+							}
+							setBg({ backgroundColor: "rgb(45, 79, 158)" });
 						}}
 					>
 						Next
@@ -167,6 +180,8 @@ const Test = () => {
 				) : null}
 			</div>
 		</div>
+	) : (
+		<p style={{ marginTop: "10rem", textAlign: "center" }}>test is done go away</p>
 	);
 };
 

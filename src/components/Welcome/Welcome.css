@@ -31,3 +31,20 @@
 	background-size: 100% 20%;
 	background-position: 50% 80%;
 }
+
+@media screen and (max-width: 1200px) {
+	.hero-text {
+		font-size: 5rem;
+		max-width: 13ch;
+	}
+
+	.welcome {
+		padding: 6rem 4rem;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.welcome {
+		padding: 6rem 2rem;
+	}
+}

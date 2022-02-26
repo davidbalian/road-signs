@@ -8,7 +8,7 @@
 }
 
 input[type="radio"] {
-	display: none;
+	margin-right: 0.5rem;
 }
 
 .test-div .img-choices {
@@ -31,6 +31,7 @@ input[type="radio"] {
 	border-radius: 0.5rem;
 	border: 1px solid rgb(219, 219, 219);
 	transition: 0.1s;
+	background-color: white;
 }
 
 .test-div label:hover {
