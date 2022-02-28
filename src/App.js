@@ -13,7 +13,7 @@ const App = () => {
 			<Routes>
 				<Route
 					exact
-					path='/'
+					path='road-signs/'
 					element={
 						<>
 							<Header />
@@ -23,7 +23,7 @@ const App = () => {
 					}
 				/>
 				<Route
-					path='/test'
+					path='road-signs/test'
 					element={
 						<>
 							<HeaderDark />

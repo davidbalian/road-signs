@@ -44,13 +44,13 @@ const Header = () => {
 		<header className='header' style={headerStyles}>
 			<div className='logo-and-title'>
 				<img src={source} alt='roundabout sign' className='logo-img' />
-				<Link to='/' style={{ textDecoration: "none" }}>
+				<Link to='road-signs/' style={{ textDecoration: "none" }}>
 					<h1 style={logoColor}>Cyprus Road Signs Test</h1>
 				</Link>
 			</div>
 			<span className='dummy'></span>
 			<nav className='nav' style={{ display: show ? "flex" : "none" }}>
-				<Link to='/'>
+				<Link to='road-signs/'>
 					<a href='#' style={linkColor}>
 						Home
 					</a>
@@ -60,7 +60,7 @@ const Header = () => {
 					About
 				</a>
 
-				<Link to='/test'>
+				<Link to='road-signs/test'>
 					<button className='test-btn-hdr'>START TEST</button>
 				</Link>
 			</nav>
