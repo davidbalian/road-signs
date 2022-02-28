@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import source from "./fav.png";
 import "./Header.css";
@@ -10,10 +10,40 @@ const Header = () => {
 		boxShadow: "none"
 	});
 	const [color, setColor] = useState({ color: "white" });
+	const [linkColor, setLinkColor] = useState({ color: "white" });
+	const [menu, setMenu] = useState({ display: "none" });
+	const [show, setShow] = useState(0);
 
 	window.onscroll = () => {
 		scrollFunction();
 	};
+
+	window.onresize = () => {
+		if (window.innerWidth <= 876) {
+			setLinkColor({ color: "black" });
+		} else {
+			setLinkColor({ color: "white" });
+		}
+	};
+
+	// window.onload = () => {
+	// 	if (window.innerWidth <= 876) {
+	// 		setColor({ color: "black" });
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	if (window.innerWidth <= 876) {
+	// 		setMenu({ display: "block" });
+	// 	} else {
+	// 		setShow(0);
+	// 		setMenu({ display: "none" });
+	// 	}
+	// }, [window.innerWidth]);
+
+	useEffect(() => {
+		show ? setMenu({ display: "block" }) : setMenu({ display: "none" });
+	}, [show]);
 
 	function scrollFunction() {
 		if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -23,9 +53,11 @@ const Header = () => {
 				boxShadow: "0 1px 2px 1px rgba(24, 24, 24, 0.308)"
 			});
 			setColor({ color: "black" });
+			setLinkColor({ color: "black" });
 		} else {
 			setStyles({ backgroundColor: "transparent", height: "6rem", boxShadow: "none" });
 			setColor({ color: "white" });
+			setLinkColor({ color: "white" });
 		}
 	}
 
@@ -38,14 +70,14 @@ const Header = () => {
 				</Link>
 			</div>
 			<span className='dummy'></span>
-			<nav className='nav'>
+			<nav className='nav' style={{ display: show ? "block" : "none" }}>
 				<Link to='/'>
-					<a href='#' style={color}>
+					<a href='#' style={window.innerWidth >= 876 ? linkColor : { color: "black" }}>
 						Home
 					</a>
 				</Link>
 
-				<a href='#about' style={color}>
+				<a href='#about' style={window.innerWidth >= 876 ? linkColor : { color: "black" }}>
 					About
 				</a>
 
@@ -53,6 +85,16 @@ const Header = () => {
 					<button className='test-btn-hdr'>START TEST</button>
 				</Link>
 			</nav>
+			<div
+				className='burger'
+				onClick={() => {
+					setShow(!show);
+				}}
+			>
+				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
+				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
+				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
+			</div>
 		</header>
 	);
 };
