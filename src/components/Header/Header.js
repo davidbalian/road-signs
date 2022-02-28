@@ -22,14 +22,6 @@ const Header = () => {
 		scrollFunction();
 	};
 
-	window.onload = () => {
-		if (window.innerWidth <= 876) {
-			setLinkColor({ color: "black" });
-		} else {
-			setLinkColor({ color: "white" });
-		}
-	};
-
 	window.onresize = () => {
 		if (window.innerWidth <= 876) {
 			setLinkColor({ color: "black" });
@@ -41,6 +33,11 @@ const Header = () => {
 
 	useEffect(() => {
 		window.innerWidth <= 876 ? setShow(0) : setShow(1);
+		if (window.innerWidth <= 876) {
+			setLinkColor({ color: "black" });
+		} else {
+			setLinkColor({ color: "white" });
+		}
 	}, []);
 
 	useEffect(() => {

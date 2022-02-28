@@ -65,7 +65,11 @@ const Test = () => {
 						Once the test has started, select any of the options that are shown below
 						the image.
 					</p>
-					<p>To check you answer, press the "Check" </p>
+					<p>
+						To check your answer, press the "Check". If the button lights up green, your
+						choice was correct. For red, your choice was wrong.
+					</p>
+					<p>Have fun!</p>
 				</div>
 			) : null}
 			{start ? (
