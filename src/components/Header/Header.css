@@ -66,24 +66,6 @@ header .nav a {
 	flex: 2;
 }
 
-.menu-text {
-	font-family: "Source Sans Pro", sans-serif;
-	color: black;
-	text-transform: uppercase;
-	font-size: 1.1rem;
-	cursor: pointer;
-	letter-spacing: 0.1rem;
-	display: none;
-}
-
-.menu-text:hover {
-	text-decoration: underline;
-}
-
-.mobile-nav {
-	display: none;
-}
-
 .nav a:hover {
 	text-decoration: underline;
 }
@@ -113,10 +95,10 @@ header .nav a {
 	align-items: center;
 	flex-direction: column;
 	cursor: pointer;
-	position: fixed;
+	position: relative;
 	top: 0;
 	right: 0;
-	margin: 2rem 2rem 0 0;
+	display: none;
 }
 
 .line {
@@ -141,10 +123,6 @@ header .nav a {
 @media screen and (max-width: 876px) {
 	header {
 		padding: 0rem 2rem;
-	}
-
-	.nav {
-		display: none;
 	}
 
 	.menu-text {
@@ -181,5 +159,34 @@ header .nav a {
 
 	.nav a:hover {
 		text-decoration: underline;
+	}
+
+	.burger {
+		height: 1.25em;
+		width: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		cursor: pointer;
+		position: relative;
+		top: 0;
+		right: 0;
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.header {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.header h1 {
+		font-size: 1.2rem;
+	}
+
+	.dummy {
+		display: none;
 	}
 }

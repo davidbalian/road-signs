@@ -3,7 +3,7 @@ import signs from "../../signs";
 import "./Test.css";
 
 const Test = () => {
-	const [i, setI] = useState(659);
+	const [i, setI] = useState(0);
 
 	const [answer, setAnswer] = useState({ caption: signs[660].Caption, source: signs[660].JPG });
 
@@ -56,6 +56,18 @@ const Test = () => {
 
 	return i <= signs.length - 2 ? (
 		<div className='test-div'>
+			{!start ? (
+				<div className='desc'>
+					<p>
+						Press the "Start Test" button on the bottom of the page to start the test.
+					</p>
+					<p>
+						Once the test has started, select any of the options that are shown below
+						the image.
+					</p>
+					<p>To check you answer, press the "Check" </p>
+				</div>
+			) : null}
 			{start ? (
 				<div className='img-choices'>
 					<img
@@ -123,7 +135,7 @@ const Test = () => {
 				</div>
 			) : null}
 
-			<div className='buttons' style={{ display: buttons ? "block" : "none" }}>
+			<div className='buttons' style={{ display: buttons ? "flex" : "none" }}>
 				{/* button starts test */}
 				{start ? null : (
 					<button
@@ -177,6 +189,11 @@ const Test = () => {
 					>
 						End Test
 					</button>
+				) : null}
+				{start ? (
+					<p className='counter'>
+						{i + 1} / {signs.length}
+					</p>
 				) : null}
 			</div>
 		</div>

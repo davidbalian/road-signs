@@ -23,6 +23,7 @@
 	font-size: 6rem;
 	font-weight: 600;
 	max-width: 15ch;
+	text-decoration: none;
 }
 
 .highlight {
@@ -46,5 +47,15 @@
 @media screen and (max-width: 950px) {
 	.welcome {
 		padding: 6rem 2rem;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.welcome {
+		padding: 6rem 1rem;
+	}
+
+	.hero-text {
+		font-size: 4rem;
 	}
 }

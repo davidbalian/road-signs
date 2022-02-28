@@ -4,21 +4,25 @@ import source from "./fav.png";
 import "./Header.css";
 
 const Header = () => {
-	const [styles, setStyles] = useState({
+	const [headerStyles, setHeaderStyles] = useState({
 		backgroundColor: "transparent",
 		height: "6rem",
 		boxShadow: "none"
 	});
-	const [color, setColor] = useState({ color: "white" });
+
+	const [logoColor, setLogoColor] = useState({ color: "white" });
+
 	const [linkColor, setLinkColor] = useState({ color: "white" });
-	const [menu, setMenu] = useState({ display: "none" });
-	const [show, setShow] = useState(0);
+
+	const [burgerColor, setBurgerColor] = useState({ backgroundColor: "white" });
+
+	const [show, setShow] = useState(1);
 
 	window.onscroll = () => {
 		scrollFunction();
 	};
 
-	window.onresize = () => {
+	window.onload = () => {
 		if (window.innerWidth <= 876) {
 			setLinkColor({ color: "black" });
 		} else {
@@ -26,11 +30,22 @@ const Header = () => {
 		}
 	};
 
-	// window.onload = () => {
-	// 	if (window.innerWidth <= 876) {
-	// 		setColor({ color: "black" });
-	// 	}
-	// };
+	window.onresize = () => {
+		if (window.innerWidth <= 876) {
+			setLinkColor({ color: "black" });
+		} else {
+			setLinkColor({ color: "white" });
+			setShow(1);
+		}
+	};
+
+	useEffect(() => {
+		window.innerWidth <= 876 ? setShow(0) : setShow(1);
+	}, []);
+
+	useEffect(() => {
+		setBurgerColor({ backgroundColor: show ? "black" : "white" });
+	}, [show]);
 
 	// useEffect(() => {
 	// 	if (window.innerWidth <= 876) {
@@ -41,43 +56,59 @@ const Header = () => {
 	// 	}
 	// }, [window.innerWidth]);
 
-	useEffect(() => {
-		show ? setMenu({ display: "block" }) : setMenu({ display: "none" });
-	}, [show]);
-
 	function scrollFunction() {
 		if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-			setStyles({
+			setHeaderStyles({
 				backgroundColor: "white",
 				height: "4rem",
 				boxShadow: "0 1px 2px 1px rgba(24, 24, 24, 0.308)"
 			});
-			setColor({ color: "black" });
-			setLinkColor({ color: "black" });
+
+			setLogoColor({ color: "black" });
+
+			if (!show) {
+				setBurgerColor({ backgroundColor: "black" });
+			} else {
+				setBurgerColor({ backgroundColor: "black" });
+			}
+
+			if (window.innerWidth > 876) {
+				setLinkColor({ color: "black" });
+			}
 		} else {
-			setStyles({ backgroundColor: "transparent", height: "6rem", boxShadow: "none" });
-			setColor({ color: "white" });
-			setLinkColor({ color: "white" });
+			setHeaderStyles({ backgroundColor: "transparent", height: "6rem", boxShadow: "none" });
+			setLogoColor({ color: "white" });
+			setBurgerColor({ backgroundColor: "white" });
+
+			if (!show) {
+				setBurgerColor({ backgroundColor: "white" });
+			} else {
+				setBurgerColor({ backgroundColor: "black" });
+			}
+
+			if (window.innerWidth > 876) {
+				setLinkColor({ color: "white" });
+			}
 		}
 	}
 
 	return (
-		<header className='header' style={styles}>
+		<header className='header' style={headerStyles}>
 			<div className='logo-and-title'>
 				<img src={source} alt='roundabout sign' className='logo-img' />
 				<Link to='/' style={{ textDecoration: "none" }}>
-					<h1 style={color}>Cyprus Road Signs Test</h1>
+					<h1 style={logoColor}>Cyprus Road Signs Test</h1>
 				</Link>
 			</div>
 			<span className='dummy'></span>
-			<nav className='nav' style={{ display: show ? "block" : "none" }}>
+			<nav className='nav' style={{ display: show ? "flex" : "none" }}>
 				<Link to='/'>
-					<a href='#' style={window.innerWidth >= 876 ? linkColor : { color: "black" }}>
+					<a href='#' style={linkColor}>
 						Home
 					</a>
 				</Link>
 
-				<a href='#about' style={window.innerWidth >= 876 ? linkColor : { color: "black" }}>
+				<a href='#about' style={linkColor}>
 					About
 				</a>
 
@@ -91,9 +122,9 @@ const Header = () => {
 					setShow(!show);
 				}}
 			>
-				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
-				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
-				<div className='line' style={{ backgroundColor: show ? "black" : "white" }}></div>
+				<div className='line' style={burgerColor}></div>
+				<div className='line' style={burgerColor}></div>
+				<div className='line' style={burgerColor}></div>
 			</div>
 		</header>
 	);
