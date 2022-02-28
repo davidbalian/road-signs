@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import source from "./fav.png";
 import "./Header.css";
 
@@ -96,23 +96,23 @@ const Header = () => {
 		<header className='header' style={headerStyles}>
 			<div className='logo-and-title'>
 				<img src={source} alt='roundabout sign' className='logo-img' />
-				<Link to='road-signs/' style={{ textDecoration: "none" }}>
+				<Link to='/' style={{ textDecoration: "none" }}>
 					<h1 style={logoColor}>Cyprus Road Signs Test</h1>
 				</Link>
 			</div>
 			<span className='dummy'></span>
 			<nav className='nav' style={{ display: show ? "flex" : "none" }}>
-				<Link to='road-signs/'>
+				<Link to='/'>
 					<a href='#' style={linkColor}>
 						Home
 					</a>
 				</Link>
 
-				<a href='#about' style={linkColor}>
+				<Link to='/#about' style={linkColor}>
 					About
-				</a>
+				</Link>
 
-				<Link to='road-signs/test'>
+				<Link to='/test'>
 					<button className='test-btn-hdr'>START TEST</button>
 				</Link>
 			</nav>
