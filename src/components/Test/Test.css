@@ -31,8 +31,9 @@ input[type="radio"] {
 }
 
 .test-div img {
-	height: 12rem;
+	max-height: 12rem;
 	width: auto;
+	max-width: 100%;
 	margin-bottom: 4rem;
 }
 
